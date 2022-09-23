@@ -1,7 +1,7 @@
 const express = require('express');
 const { model } = require('mongoose');
 const router = express.Router();
-const Model = require('../models/issueRouter');
+const Model = require('../models/issueModel');
 
 // Response Codes
 // 200 - Successfull

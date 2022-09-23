@@ -1,23 +1,23 @@
 import React from 'react'
-import {Formik} from 'formik'
+import { Formik } from 'formik'
 
 const Login = () => {
 
 
-  const loginSubmit = (formdata)=>{
+  const loginSubmit = (formdata) => {
     console.log(formdata);
   }
   return (
-<section className="vh-100" style={{backgroundColor:"Light Blue"}}>
-<div className="container py-5 h-100">
-  <div className= "row d-flex justify-content-center align-items-center h-100">
-    <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-      <div className="card shadow-2-strong" style={{borderRadius:"1rem"}}>
-        <div className="Cardbody p-5 text-center">
-          <h3 className="mb-5">Sign In</h3>``
-          <Formik initialValues={{email : '', password : ''}} onSubmit={loginSubmit}>
-                    { ({values,handleSubmit,handleChange}) => (
-                      <form onSubmit={handleSubmit}>
+    <section className="vh-100" style={{ backgroundColor: "Light Blue" }}>
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div className="card shadow-2-strong" style={{ borderRadius: "1rem" }}>
+              <div className="Cardbody p-5 text-center">
+                <h3 className="mb-5">Sign In</h3>``
+                <Formik initialValues={{ email: '', password: '' }} onSubmit={loginSubmit}>
+                  {({ values, handleSubmit, handleChange }) => (
+                    <form onSubmit={handleSubmit}>
                       <div className="form-outline mb-4">
                         <input
                           type="email"
@@ -32,10 +32,10 @@ const Login = () => {
                       </div>
                       <div className="form-outline mb-4">
                         <input
-                         type="password"
-                         id="password"
-                         value={values.password}
-                         onChange={handleChange}
+                          type="password"
+                          id="password"
+                          value={values.password}
+                          onChange={handleChange}
                           className="form-control form-control-lg"
                         />
                         <label className="form-label" htmlFor="typePasswordX-2">
@@ -59,10 +59,10 @@ const Login = () => {
                         Login
                       </button>
                     </form>
-                    ) }
+                  )}
                 </Formik>
 
-                
+
                 <hr className="my-4" />
                 <button
                   className="btn btn-lg btn-block btn-primary"
