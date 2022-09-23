@@ -1,7 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {Formik} from 'formik';
 
 const AddIssue = () => {
-  return (
+
+  const addIssue = async (formdata) => { 
+    const response = await fetch('http://localhost:5000/issue/add', {
+      method: 'POST',
+      body : JSON.stringify(formdata),
+      headers : {
+        'Content-Type' : 'application/json'
+      }
+    });
+
+    console.log(response.status);
+  }
+
     return (
         <section className="vh-100" style={{ backgroundColor: "Light Blue" }}>
           <div className="container py-5 h-100">
@@ -9,8 +22,15 @@ const AddIssue = () => {
               <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div className="card shadow-2-strong" style={{ borderRadius: "1rem" }}>
                   <div className="Cardbody p-5 text-center">
-                    <h3 className="mb-5">Sign In</h3>``
-                    <Formik initialValues={{ email: '', password: '' }} onSubmit={loginSubmit}>
+                    <h3 className="mb-5">Sign In</h3>
+                    <Formik initialValues={{
+                      title:'',
+                      description: '',
+                      category :'',
+                      assignedby:'',
+                      assignedto:'',
+                      team:'',
+                      createdAt: new Date() }} onSubmit={addIssue}>
                       {({ values, handleSubmit, handleChange }) => (
                         <form onSubmit={handleSubmit}>
                           <div className="form-outline mb-4">
@@ -79,10 +99,8 @@ const AddIssue = () => {
               </div>
             </div>
           </div>
-        </section>
-    
+        </section>    
       )
-  )
 }
 
 export default AddIssue

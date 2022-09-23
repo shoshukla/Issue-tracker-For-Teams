@@ -1,6 +1,5 @@
-const { Schema } = require ('mongoose');
-const { model,schema} = require ('../connection');
- const mySchema = new schema({
+const { model,Schema} = require ('../connection');
+ const mySchema = new Schema({
     username:String,
     email : String,
     Password :String,
@@ -8,4 +7,4 @@ const { model,schema} = require ('../connection');
     
 
  })
- module.exports =('userscollection',mySchema);
+ module.exports = model('userscollection',mySchema);

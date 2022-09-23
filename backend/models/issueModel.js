@@ -1,12 +1,12 @@
-const { Schema } = require ('mongoose');
-const { model,schema} = require ('../connection');
- const mySchema = new schema({
+
+const { model,Schema} = require ('../connection');
+ const mySchema = new Schema({
     title:String,
     description: String,
-    Category :String,
+    category :String,
     assignedby:String,
     assignedto:String,
     team:String,
     createdAt:Date
  })
- module.exports =('userscollection',mySchema);
+ module.exports = model('issuecollection',mySchema);
