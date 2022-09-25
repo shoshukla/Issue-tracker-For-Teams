@@ -111,7 +111,7 @@
 		font-size: 18px;
 	}
 
-	.btn {
+	/* .btn {
 		padding: 8px 20px;
 		margin: 7px 0;
 		border: 2px solid white;
@@ -119,7 +119,7 @@
 		background: none;
 		color: white;
 		cursor: pointer;
-	}
+	} */
 
 	.btn-sm {
 		padding: 6px 10px;

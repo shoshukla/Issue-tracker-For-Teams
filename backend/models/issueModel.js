@@ -6,6 +6,7 @@ const { model,Schema} = require ('../connection');
     category :String,
     assignedby:String,
     assignedto:String,
+    status:{type : String, default : 'Pending'},
     team:String,
     createdAt:Date
  })

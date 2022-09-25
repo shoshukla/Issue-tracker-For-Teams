@@ -51,4 +51,14 @@ router.get('/getall',(req,res) => {
             res.json(err)
         });
     })
+
+
+    router.put('/update/:id', (req, res) => {
+        Model.findByIdAndUpdate(req.params.id, req.body)
+        .then((result) => {
+            res.json(result);
+        }).catch((err) => {
+            res.json(err)
+        });
+    })
 module.exports = router ;
